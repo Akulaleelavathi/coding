@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner scan=new Scanner(System.in);
+        int l=scan.nextInt();
+        char [] s=scan.next().toCharArray();
+        int n=scan.nextInt();
+        for(int i=0;i<n;i++){
+            int p=scan.nextInt()-1;
+            int c=0;
+            for(int j=0;j<p;j++){
+                if(s[p]==s[j]){
+                    c++;
+                }
+            }
+            System.out.println(c);
+        }
+    }
+}
