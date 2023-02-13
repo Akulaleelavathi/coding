@@ -1,0 +1,32 @@
+ public static String superReducedString(String s) {
+        Stack<Character>st=new Stack<>();
+        st.push(s.charAt(0));
+        for(int i=1;i<s.length();i++){
+            if(st.isEmpty()){
+                st.push(s.charAt(i));
+                i=i+1;
+            }
+            char prev=st.peek();
+            st.push(s.charAt(i));
+            if(st.peek()==prev){
+                st.pop();
+                st.pop();
+            }
+        }
+        //System.out.println(st);
+        String n="";
+        while(!st.isEmpty()){
+            n=st.pop()+n;
+        }
+        if(n.length()>0)
+            return n;
+        else
+            return "Empty String";
+        
+    
+
+    
+
+    }
+
+}
