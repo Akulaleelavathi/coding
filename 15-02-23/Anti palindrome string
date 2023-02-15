@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Solution {
+public static void main(String args[] ) {
+try(Scanner sc = new Scanner(System.in)){
+int T = sc.nextInt();
+while(T-- > 0){
+String str = sc.next().toLowerCase();
+
+char[] ch = new char[str.length()];
+
+ch = str.toCharArray();
+
+Arrays.sort(ch);
+
+
+ 
+
+StringBuilder sb = new StringBuilder(str);
+
+String rev = String.valueOf(sb.reverse());
+
+
+ 
+
+if(str.equals(rev)){
+
+System.out.println(-1);
+
+
+ 
+
+}else{
+
+System.out.println(new String(ch));
+
+}
+
+}
+
+}
+
+}
+
+}
