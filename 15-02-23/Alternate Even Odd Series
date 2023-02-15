@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan=new Scanner(System.in);
+        String s=scan.nextLine();
+        int c=0;
+        String evenStr="";
+        String oddStr="";
+        String res="";
+        for(int i=0;i<s.length();i++){
+            if(!Character.isDigit(s.charAt(i)) && !Character.isAlphabetic(s.charAt(i))){
+                c++;
+            }
+            if(Character.isDigit(s.charAt(i))){
+                int x=s.charAt(i)-'0';
+                if(x%2==0)
+                    evenStr=evenStr+s.charAt(i);
+                else
+                    oddStr=oddStr+s.charAt(i);
+            }
+            
+        }
+        int j=0;
+        for(j=0;j<evenStr.length() && j<oddStr.length();j++){
+            if(c%2==0)
+                res=res+evenStr.charAt(j)+oddStr.charAt(j);
+            else
+                res=res+oddStr.charAt(j)+evenStr.charAt(j);
+        }
+        if(evenStr.length()>j){
+            //for(int k=j;k<evenStr.length();k++)
+                res=res+evenStr.substring(j);
+        }
+        if(oddStr.length()>j){
+            res=res+oddStr.substring(j);
+        }
+        System.out.println(res);
+    }
+}
